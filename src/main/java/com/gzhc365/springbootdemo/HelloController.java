@@ -22,18 +22,31 @@ public class HelloController {
     public String index(){
         return "I am helloworld";
     }
+
     @SuppressWarnings("deprecation")
     @RequestMapping("/date")
     String nowDate(){
         return "现在的时间是：" + (new Date()).toLocaleString();
     }
+
     @GetMapping("/person/{name}/{height}/{address}")
     public String getInfo(@PathVariable String name,@PathVariable Double height, @PathVariable String address){
         return "姓名：" + name + "，身高：" + height + ",家庭住址：" + address;
     }
+
     @GetMapping("/person/{name}-{height}-{address}")
     public String getInfo02(@PathVariable String name, @PathVariable Double height, @PathVariable String address){
         return "姓名：" + name + "，身高：" + height + ",家庭住址：" + address;
+    }
+
+    @RequestMapping("/sex")
+    public String sex(){
+        return "I am helloworld";
+    }
+
+    @RequestMapping("/testDevl")
+    public String testDevl(){
+        return "I am testDevl";
     }
 
 }
